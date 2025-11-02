@@ -12,7 +12,7 @@
 
 ![Screenshot](https://raw.githubusercontent.com/mmosiek/zuberia.space/refs/heads/main/screenshot.png)
 
-When the user's browser is running **dark mode**, the dark color scheme will be used **automatically**. The default is the light/white color scheme. Check out the `/assets/css/` for the implementation.
+When the user's browser is running **dark mode**, the dark color scheme will be used **automatically**. The default is the light/white color scheme. Check out the `/static/assets/css/` for the implementation.
 
 ## Installation
 
