@@ -1,0 +1,7 @@
+{
+  "name": "zola-blog",
+  "version": "1.0.0",
+  "scripts": {
+    "vercel-build": "ZOLA_VERSION=0.21.0 zola build"
+  }
+}

@@ -1,0 +1,60 @@
+/* ===========================
+      Light mode
+=========================== */
+:root {
+    /* Layout */
+    --width: 800px;
+    --font-main: Rubik-Bold, sans-serif;
+    --font-secondary: Rubik, sans-serif;
+    --font-scale: 1em;
+
+    /* Colors */
+    --background-color: #fff;            /* light bg */
+    --heading-color: #222;               /* dark heading */
+    --text-color: #444;                  /* text */
+    --link-color: #3273dc;               /* blue link */
+    --visited-color: #8b6fcb;            /* visited link */
+
+    /* Code / quote */
+    --code-background-color: #f2f2f2;    /* code bg */
+    --code-color: #222;                  /* code text */
+    --code-border-color: #444;           /* border */
+    --blockquote-color: #222;            /* quote */
+
+    /* Tables */
+    --table-background-color: #fff;
+    --table-border-color: #666;
+    --table-header-background: #f0f0f0;
+    --table-row-even-background: #f2f2f2;
+    --table-row-odd-background: var(--background-color);
+    --table-cell-border: #444;
+}
+
+/* ===========================
+      Dark mode
+=========================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Fonts */
+        --font-main: Rubik-Bold, sans-serif;
+        --font-secondary: Rubik, sans-serif;
+        --font-scale: 1em;
+
+        /* Colors */
+        --background-color: #0D1B2A;      /* dark bg */
+        --heading-color: #eee;            /* light heading */
+        --text-color: #ddd;               /* light text */
+        --link-color: #8cc2dd;            /* link */
+
+        /* Code / quote */
+        --code-background-color: #000;    /* code bg */
+        --code-color: #ddd;               /* code text */
+
+        /* Tables */
+        --table-background-color: #0F0F0F;
+        --table-border-color: #444;
+        --table-header-background: #111;
+        --table-row-even-background: #101010;
+        --table-row-odd-background: #0A0A0A;
+    }
+}

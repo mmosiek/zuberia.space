@@ -1,0 +1,245 @@
+@font-face {
+    font-family: "Rubik";
+    src: url("/font/Rubik.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rubik-Bold";
+    src: url("/font/Rubik-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ===========================
+      Layout & Elements
+=========================== */
+
+body {
+  font-family: var(--font-secondary);
+  font-size: var(--font-scale);
+  margin: auto;
+  padding: 20px;
+  max-width: var(--width);
+  text-align: left;
+  background-color: var(--background-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-main);
+  color: var(--heading-color);
+}
+
+a {
+  color: var(--link-color);
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+nav a {
+  margin-right: 8px;
+}
+nav span.active {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+strong, b {
+  color: var(--heading-color);
+}
+
+input, textarea, select, button {
+  font-family: var(--font-secondary);
+  font-size: var(--font-scale);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border: 1px solid var(--code-border-color);
+  border-radius: 4px;
+  padding: 6px 8px;
+  outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  cursor: pointer;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--link-color);
+  box-shadow: 0 0 0 2px rgba(50, 115, 220, .2);
+}
+
+input::placeholder, textarea::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+input[disabled], textarea[disabled], select[disabled], button:disabled {
+  background-color: #f9f9f9;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+button:hover {
+  border-color: var(--link-color);
+  box-shadow: 0 0 0 2px rgba(50, 115, 220, .1);
+  background-color: var(--background-color);
+}
+button:active {
+  background-color: var(--code-background-color);
+}
+
+main {
+  line-height: 1.6;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dotted;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ===========================
+      Code & Quotes
+=========================== */
+
+pre code {
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+  display: block;
+  padding: 20px;
+  border: 1px solid var(--code-border-color);
+  white-space: pre-wrap;
+  font-size: .875rem;
+  overflow-x: auto;
+}
+
+code {
+  font-family: monospace;
+  padding: 2px;
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+}
+
+blockquote {
+  border-left: 1px solid #999;
+  color: var(--code-color);
+  padding-left: 20px;
+  font-style: italic;
+}
+
+/* ===========================
+      Footer
+=========================== */
+
+footer {
+  padding: 25px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.title:hover {
+  text-decoration: none;
+}
+.title h1 {
+  font-size: 1.5em;
+}
+
+/* ===========================
+      Inline & Highlight
+=========================== */
+
+.inline {
+  width: auto !important;
+}
+
+.highlight, .code {
+  padding: 1px 15px;
+  background-color: var(--code-background-color);
+  color: var(--code-color);
+  border-radius: 3px;
+  margin-block: 1em;
+  overflow-x: auto;
+}
+
+/* ===========================
+      Blog
+=========================== */
+
+ul.blog-posts {
+  list-style: none;
+  padding: 0;
+}
+ul.blog-posts li {
+  display: flex;
+}
+ul.blog-posts li span {
+  flex: 0 0 110px;
+}
+
+/* ===========================
+      Tables
+=========================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: monospace;
+  border: 1px solid var(--table-border-color);
+  font-size: .875rem;
+  overflow: hidden;
+  background-color: var(--table-background-color);
+}
+th, td {
+  border: 1px solid var(--table-cell-border);
+  padding: 8px 12px;
+  text-align: left;
+  color: var(--text-color);
+}
+th {
+  background-color: var(--table-header-background);
+  color: var(--heading-color);
+  font-weight: bold;
+}
+tr:nth-child(even) {
+  background-color: var(--table-row-even-background);
+}
+tr:nth-child(odd) {
+  background-color: var(--table-row-odd-background);
+}
+
+/* ===========================
+      Extras
+=========================== */
+
+.tags {
+  font-size: smaller;
+}
+
+/* ===========================
+      Game Container
+=========================== */
+
+#game-container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 4/3;
+  margin: auto;
+}
+#game-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

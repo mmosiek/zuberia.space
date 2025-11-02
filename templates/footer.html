@@ -1,0 +1,10 @@
+<footer>
+  {% if config.extra.social_media %}
+    <div class="social-media">&copy; {{ config.extra.year }} •
+      {% for item in config.extra.social_media %}
+        <a href="{{ item.url }}" target="_blank" rel="noopener" class="social-link">{{ item.name }}</a>
+        {%- if not loop.last %} | {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</footer>

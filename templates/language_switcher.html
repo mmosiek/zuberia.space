@@ -1,0 +1,34 @@
+{%- if config.extra.language_switcher %}
+<nav class="lang" aria-label="{{ trans(key="language", lang=lang) }}">
+  {%- set path = current_path | default(value="/") | replace(from='/' ~ lang ~ '/', to='/') | trim_start_matches(pat='/') %}
+  {%- for tr in config.extra.translations %}
+    {%- set active = tr.code == lang %}
+    {%- if active %}
+      <span class="active" data-lang="{{ tr.code }}">
+        <img src="{{ tr.flag }}" alt="{{ tr.name }} flag" class="lang-flag"> {{ tr.name }}
+      </span>
+    {%- else %}
+      <a
+        data-lang="{{ tr.code }}"
+        href="{% if tr.code == 'pl' %}{{ get_url(path=path) }}/{% else %}{{ get_url(path='/' ~ tr.code ~ '/' ~ path) }}{% endif %}">
+        <img src="{{ tr.flag }}" alt="{{ tr.name }} flag" class="lang-flag"> {{ tr.name }}
+      </a>
+    {%- endif %}
+  {%- endfor %}
+</nav>
+
+<script>
+(() => {
+  const langs=[{% for tr in config.extra.translations %}"{{ tr.code }}"{% if not loop.last %},{% endif %}{% endfor %}],
+        cur="{{ lang }}",saved=localStorage.lang,pref=(navigator.language||"").split("-")[0].toLowerCase(),
+        tgt=saved||(langs.includes(pref)?pref:cur),setL=l=>localStorage.lang=l;
+  if(tgt!==cur&&langs.includes(tgt)){
+    let p=location.pathname,c=/^\/[^\/]+/.test(p)?p.replace(/^\/[^\/]+/,""):p,u=tgt==="pl"?c:`/${tgt}${c}`;
+    setL(tgt);
+    fetch(u,{method:"HEAD"}).then(r=>r.ok?location.replace(u):(setL("pl"),location.replace(c)))
+    .catch(()=>{setL("pl");location.replace(c)});
+  }
+  document.querySelectorAll(".lang a").forEach(a=>a.onclick=()=>setL(a.dataset.lang));
+})();
+</script>
+{%- endif %}

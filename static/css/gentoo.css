@@ -1,0 +1,63 @@
+/* ===========================
+      Light mode - Gentoo
+=========================== */
+:root {
+    /* Layout */
+    --width: 800px;
+    --font-main: Rubik-Bold, sans-serif;
+    --font-secondary: Rubik, sans-serif;
+    --font-scale: 1em;
+
+    /* Colors */
+    --background-color: #f0f0f5;       /* light bg */
+    --heading-color: #5c2a83;          /* dark purple heading */
+    --text-color: #1a1a1a;             /* dark text */
+    --link-color: #6b3fa0;             /* purple link */
+    --visited-color: #4d2c73;          /* darker visited link */
+
+    /* Code / quote */
+    --code-background-color: #e6e6f0;  /* code bg */
+    --code-color: #5c2a83;             /* code text */
+    --code-border-color: #444;         /* code & button border */
+    --blockquote-color: #7d55b3;       /* quote color */
+
+    /* Tables */
+    --table-background-color: #e6e6f0;
+    --table-border-color: #444;
+    --table-header-background: #d1c4e9;
+    --table-row-even-background: #f0f0f5;
+    --table-row-odd-background: #e6e6f0;
+    --table-cell-border: #6b3fa0;
+}
+
+/* ===========================
+      Dark mode - Gentoo
+=========================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Fonts */
+        --font-main: Rubik-Bold, sans-serif;
+        --font-secondary: Rubik, sans-serif;
+        --font-scale: 1em;
+
+        /* Colors */
+        --background-color: #1a0d1a;       /* dark bg */
+        --heading-color: #d1b3ff;          /* light purple heading */
+        --text-color: #f0e6f0;             /* light text */
+        --link-color: #b580ff;             /* purple link */
+        --visited-color: #9966cc;          /* darker link */
+
+        /* Code / quote */
+        --code-background-color: #2a1a2a;  /* code bg */
+        --code-color: #d1b3ff;             /* code text */
+        --blockquote-color: #c299ff;       /* quote color */
+
+        /* Tables */
+        --table-background-color: #2a1a2a;
+        --table-border-color: #b580ff;
+        --table-header-background: #3d1f3d;
+        --table-row-even-background: #261426;
+        --table-row-odd-background: #1a0d1a;
+        --table-cell-border: #b580ff;
+    }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zuberia.space</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-purple-100 text-gray-800 min-h-screen transition-colors duration-300">
+    <div class="container mx-auto px-4 py-8">
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="md:col-span-2">
+                <div class="bg-white rounded-lg p-6 shadow-lg mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-blue-600">Stats</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="stat-item">
+                            <p class="text-gray-600">All Time Clicks</p>
+                            <p class="text-2xl font-bold text-blue-600" id="user-clicks">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="text-gray-600">Bucks</p>
+                            <p class="text-2xl font-bold text-yellow-500" id="user-bucks">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="text-gray-600">Multiplier</p>
+                            <p class="text-2xl font-bold text-green-500" id="user-mult">1x</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="text-gray-600">CPS</p>
+                            <p class="text-2xl font-bold text-purple-500" id="user-cps">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-blue-600">Level Progress</h2>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-gray-600">Level <span id="user-level" class="font-bold">1</span></span>
+                        <span class="text-gray-600">Next Reward: <span id="next-level-reward" class="font-bold text-yellow-500">200</span> bucks</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+                        <div id="xp-bar" class="bg-blue-500 h-4 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                    </div>
+                    <div class="flex justify-between mt-2 text-sm text-gray-600">
+                        <span><span id="xp">0</span> / <span id="needed-xp">100</span> XP</span>
+                        <span id="xp-percentage">0%</span>
+                    </div>
+                </div>
+
+                <button id="click-button" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold select-none py-8 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 shadow-lg text-4xl">
+                    Click Me!
+                </button>
+            </div>
+
+            <div>
+                <div class="bg-white rounded-lg p-6 shadow-lg mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-blue-600">Upgrades</h2>
+                    <div id="upgrades-list" class="space-y-4 max-h-96 overflow-y-auto pr-2">
+                        <!-- Upgrades will be dynamically added here -->
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg">
+                    <h2 class="text-2xl font-semibold mb-4 text-blue-600">Achievements</h2>
+                    <div id="achievements-list" class="space-y-2 achieve">
+                        <!-- Achievements will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="settings-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 w-96 transform transition-all duration-300 scale-0">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-600">Settings</h2>
+            <div class="space-y-4">
+                <button id="save-game" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                    Save Game
+                </button>
+                <button id="reset-game" class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                    Reset Game
+                </button>
+                <button id="toggle-upgrades" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                    Show All Upgrades
+                </button>
+                <div class="flex items-center justify-between">
+                    <span>Dark Mode</span>
+                    <label class="switch">
+                        <input type="checkbox" id="dark-mode-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <button id="close-settings" class="mt-6 w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded btn-close transition duration-300 select-none ease-in-out">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <button id="open-settings" class="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-110">
+        ⚙️ Settings
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
