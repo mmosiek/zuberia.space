@@ -1,0 +1,87 @@
+title = "zuberia ʕ•ᴥ•ʔ"
+base_url = "/"
+description = "zuberia.space - no ads. no tracking. just the good stuff."
+
+generate_sitemap = true
+generate_feeds = true
+compile_sass = true
+build_search_index = false
+
+taxonomies = [
+  { name = "categories", feed = true },
+  { name = "tags", feed = true },
+]
+
+default_language = "pl"
+
+[translations]
+no_posts = "Brak wpisów"
+remove_filter = "Usuń filtr"
+filtering_for = "Filtrowanie według"
+table_of_contents = "Spis treści"
+language = "Język"
+site = "Strona"
+
+[languages.en]
+title = "zuberia ʕ•ᴥ•ʔ"
+description = "zuberia.space"
+
+taxonomies = [
+  { name = "categories", feed = true },
+  { name = "tags", feed = true },
+]
+
+[languages.en.translations]
+no_posts = "No posts yet"
+remove_filter = "Remove filter"
+filtering_for = "Filtering for"
+table_of_contents = "Table of contents"
+language = "language"
+site = "site"
+
+[markdown]
+highlight_code = false
+
+[extra]
+date_format = "%d.%m.%Y"
+language_switcher = true
+favicon = "/assets/icon.png"
+year = "2025"
+translations = [
+  { code = "pl", name = "Polski", flag = "/assets/pl.png" },
+  { code = "en", name = "English", flag = "/assets/gb.png" },
+]
+
+[[extra.social_media]]
+name = "Email"
+url = "mailto:kontakt@zuberia.space"
+
+[[extra.social_media]]
+name = "Github"
+url = "https://github.com/mmosiek"
+
+[extra.table_of_contents]
+show = true
+max_level = 3
+visible_on_load = true
+
+[[extra.main_menu]]
+name = "Strona główna"
+name_en = "Home"
+url = "@/_index.md"
+
+[[extra.main_menu]]
+name = "Blog"
+name_en = "Blog"
+url = "@/blog/_index.md"
+
+[[extra.main_menu]]
+name = "Narzędzia"
+name_en = "Tools"
+url = "@/tools/index.md"
+
+[[extra.main_menu]]
+name = "Gry"
+name_en = "Games"
+url = "@/games/index.md"
+
