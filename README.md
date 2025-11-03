@@ -6,7 +6,8 @@
 
 ## Demo
 
-- [zuberia.space](https://zuberia.space/)
+- [Demo site](https://capable-tartufo-2e3e23.netlify.app/)
+- [Main site (zuberia.space)](https://zuberia.space/)
 
 ## Screenshot
 
