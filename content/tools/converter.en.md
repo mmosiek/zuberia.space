@@ -4,7 +4,7 @@ extra.hide_table_of_contents = true
 +++
 
 <div class="converter p-4 bg-gray-50 rounded-lg shadow-sm">
-Supported formats: <strong>JPG, JPEG, PNG, WebP, GIF</strong><br>
+Supported formats: <strong>JPG, JPEG, PNG, WebP</strong><br>
 Conversion happens locally in your browser, so your files are not uploaded anywhere.
 
 ---
@@ -17,7 +17,6 @@ Images:<br>
   <option value="png" selected>PNG</option>
   <option value="jpg">JPG</option>
   <option value="webp">WebP</option>
-  <option value="gif">GIF</option>
 </select><br>
 
 ---
@@ -29,7 +28,7 @@ Images:<br>
 </div>
 
 <script src="/js/jszip.min.js"></script>
-<script src="/js/gif.js"></script>
 <script src="/js/converter.js"></script>
+
 
 
